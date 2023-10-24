@@ -1,7 +1,9 @@
-var a = 1
-var b = 'hello world'
-function foo(){
-    // console.log(a);
+// 在全局作用域中声明一个全局变量
+var globalVar = "我在全局作用域中";
+
+// 在全局作用域之外访问全局变量
+function accessGlobalVar() {
+  console.log(globalVar);
 }
-console.log(c);
-foo()
+
+accessGlobalVar(); // 输出: "我在全局作用域中"

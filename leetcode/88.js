@@ -1,4 +1,4 @@
-ar merge = function(nums1, m, nums2, n) {
+var merge = function(nums1, m, nums2, n) {
     let p1 = 0,p2 = 0
     const sorted = new Array(m+n).fill(0)
     var cur = 0

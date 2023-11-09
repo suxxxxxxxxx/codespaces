@@ -1,4 +1,4 @@
-ar isHappy = function(n) {
+var isHappy = function(n) {
     let slow = n
     let fast =getNext(n)
     while(fast !== 1&&fast !==slow){

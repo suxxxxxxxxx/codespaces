@@ -4,7 +4,7 @@ var c=ture//false 布尔类型 boolean
 var d=undefined
 var e=null
 var obj={//引用类型 object
-    name:'君君',
+    name:'君君'
     age:18
 }
 var arr=['a','b','c','d']

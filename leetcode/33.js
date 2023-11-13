@@ -1,4 +1,4 @@
-ar search = function(nums, target) {
+var search = function(nums, target) {
     if(!nums.length) return -1
     const n = nums.length
     let left = 0

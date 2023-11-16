@@ -1,0 +1,7 @@
+<!--pages/vehicles/show.wxml-->
+<text>pages/vehicles/show.wxml</text>
+<view class="section">
+  <view class="cover">
+    <image/>
+  </view>
+</view>

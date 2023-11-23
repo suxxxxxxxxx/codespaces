@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "JAVASCRIPT You don't know",
+      "author": "苏苏"
+    },
+    {
+      "id": 2,
+      "title": "你不知道的JAVASCRIPT",
+      "author": "进哥哥"
+    },
+    {
+      "title": "jxcjdx",
+      "author": "ssuusu",
+      "id": 3
+    },
+    {
+      "title": "江西财经大学",
+      "author": "肖启明",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "好好学习，天天向上",
+      "postId": 2
+    },
+    {
+      "body": "good",
+      "postId": 3,
+      "id": 3
+    }
+  ]
+}

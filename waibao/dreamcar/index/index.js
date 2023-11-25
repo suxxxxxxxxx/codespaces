@@ -6,8 +6,9 @@ Page({
   // 页面的数据
   data: {
     // user: {}
-    slides: null,
-    entities: null
+    slides:null,
+    entities:null,
+
   },
   // 生命周期
   onLoad() {

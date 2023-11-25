@@ -18,17 +18,18 @@ Page({
     const { id } = options
     // const id = options.id;
     // console.log(id);
-    console.log(app.globalData.vehicles)
-    const entity = app.globalData.vehicles.filter((item) => {
+    console.log(app.globalData.vehicles);
+    const entity = app.globalData.vehicles.filter((item) =>
+    {
       return item.id == id
-    });
-    // console.log(entity);
+    })
+    // console.log(entity)
     this.setData({
-      entity: entity[0]
+      entity:entity[0]
     })
 
     wx.setNavigationBarTitle({
-      title: this.data.entity.header
+      title:this.data.entity.header,
     })
   },
 

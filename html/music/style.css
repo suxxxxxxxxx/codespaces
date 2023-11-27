@@ -1,46 +1,64 @@
-*{
-    margin : 0;
+/* 通用样式，清除所有元素的默认外边距和内边距 */
+* {
+    margin: 0;
     padding: 0;
 }
-.music__head{
+
+/* 页面头部样式 */
+.music__head {
     position: relative;
     height: 303px;
-    overflow: auto;
+    overflow: auto; /* 设置为BFC容器，清除浮动 */
 }
-.music__head .bg{
-    height: 303px;
-    width: 100%;     
+
+/* 页面头部背景样式 */
+.music__head .bg {
+    width: 100%;
+    height: 100%;
+    background: url(https://i0.hdslb.com/bfs/archive/c5e0392db23dada41b8ff5e052881abd7bb59d60.jpg);
     background-size: 100% 100%;
-    filter: blur(10px);
-    background: url(https://5b0988e595225.cdn.sohucs.com/images/20190919/55e306da7e8843b89903bd1bed0d20b6.jpeg);
+    filter: blur(7px); /* 设置背景虚化 */
     position: absolute;
-    z-index: -1; 
+    z-index: -1; /* 将虚化背景放到最下面 */
 }
-.music__head-title{
+
+/* 页面标题样式 */
+.music__head--title {
     margin: 45px 0;
-    color: #fff;
-    padding:  0 40px;
+    color: rgb(1, 0, 0);
+    padding: 0 40px;
 }
-.back{
+
+/* 返回按钮样式 */
+.back {
     float: left;
+    width: 17px;
+    height: 31px;
 }
-.title{
+
+/* 标题样式 */
+.title {
     text-align: center;
     font-size: 12px;
 }
-.music__body{
+
+/* 主体部分样式 */
+.music__body {
     width: 100%;
-    height: calc(100vh - 303px);
+    /* calc用于计算函数，设置高度为用户屏幕高度减去130px */
+    height: calc(100vh - 130px);
+    background-color: aliceblue;
     position: absolute;
     top: 130px;
-    background-color: #fff;
-    border-top-right-radius: 32px;
-    border-top-left-radius: 32px;
+    border-top-right-radius: 32px; /* 设置右上圆角 */
+    border-top-left-radius: 32px; /* 设置左上圆角 */
 }
-.body-pic{
+
+/* 图片容器样式 */
+.body-pic {
     width: 257px;
     height: 283px;
-    overflow: hidden;
+    overflow: hidden; /* 超出则隐藏，防止图片变形 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,15 +66,80 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top : -39px;
-    box-shadow: 0 0 10px #efefef;
+    top: -39px;
+    box-shadow: 0 0 20px #fff;
 }
-.body-pic img{
-    width: 100%;
-    height: 100%;
 
+/* 图片样式 */
+.body-pic img {
+    height: 100%;
 }
-.body-desc{
+
+/* 描述文本样式 */
+.body-desc {
     margin-top: 280px;
     text-align: center;
+}
+
+/* 名称文本样式 */
+.body-desc .name {
+    font-size: 21px;
+    margin-bottom: 2px;
+}
+
+/* 右侧分隔线样式 */
+.body-line .line-right {
+    position: absolute;
+    width: 277px;
+    height: 0;
+    border: 2px solid #C6C6C6;
+    margin-top: 44px;
+    margin-left: 50px;
+}
+
+/* 左侧分隔线样式 */
+.body-line .line-left {
+    position: absolute;
+    height: 0;
+    margin-left: 50px;
+    margin-top: 43px;
+    width: 138px;
+    border: 2px solid red;
+    z-index: 1;
+}
+
+/* 左侧操作样式 */
+.body-line .op-left {
+    position: absolute;
+    width: 20px;
+    height: 6px;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: SourceHanSansCN;
+    color: #9EA0AD;
+    line-height: 26px;
+    margin-top: 45px;
+    margin-left: 50px;
+}
+
+/* 右侧编辑样式 */
+.body-line .ed-right {
+    position: absolute;
+    width: 20px;
+    height: 6px;
+    font-size: 8px;
+    font-family: SourceHanSansCN;
+    font-weight: bold;
+    color: #9EA0AD;
+    line-height: 26px;
+    margin-top: 45px;
+    margin-left: 315px;
+}
+.body-play .icon-container {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

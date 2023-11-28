@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        [v-cloak]{
-            display: none;
+        .img{
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
 <body>
     <div id="app"></div>
     <template id="my-app">
-        <div v-pre>{{ msg }}</div>
-
-        <h2 v-cloak>{{msg}}</h2>
+        <!-- <h2 v-text="msg"></h2> -->
+        <img v-bind:src="imgUrl" alt="">
     </template>
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
     <script>
         const App ={
             template:'#my-app',
             data(){
                 return {
-                    msg:'hello word'
+                    msg:'hello word',
+                    imgUrl:'https://img2.baidu.com/it/u=1297740018,2772695612&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1701277200&t=98a4a4153d81736bdb9980bc4e261dfb'
                 }
             }
         }
-        Vue.createApp(App).mount('#app')
+    Vue.createApp(App).mount('#app')
     </script>
 </body>
 </html>

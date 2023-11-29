@@ -9,9 +9,9 @@
     <div id="app"></div>
     <template id="my-app">
         <div>{{ msg }}</div>
-        <div v-text="info"></div>
+        <div v-text="info"></div>//v-text指令，会将数据解析成文本，不会解析html标签
         <div>{{ info }}</div>
-        <div v-html="info"></div>
+        <div v-html="info"></div>//v-html指令，会将数据解析成html标签
     </template>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

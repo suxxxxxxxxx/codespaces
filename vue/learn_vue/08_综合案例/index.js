@@ -49,8 +49,9 @@ Vue.createApp({
             
         },
         decrement(index) {
+          if (this.books[index].count > 1) {
             this.books[index].count--;
-            if(this.books[index].count < 1) this.books[index].count = 1;
+          }
         },
         removeHandle(index) {
             this.books.splice(index, 1);

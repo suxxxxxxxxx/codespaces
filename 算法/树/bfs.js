@@ -8,5 +8,4 @@ function BFS(root){
         if(n.right) queue.push(n.right) 
         queue.shift()
     }
-    
 } 

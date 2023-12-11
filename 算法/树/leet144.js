@@ -6,7 +6,7 @@
 //     ans = ans.concat(preorderTraversal(root.right))
 //     return ans
 // };
-//迭代
+
 var preorderTraversal = function(root) {
     if(!root) return []
     const res = []

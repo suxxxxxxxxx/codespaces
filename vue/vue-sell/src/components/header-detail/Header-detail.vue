@@ -45,7 +45,7 @@
             transition: all 0.5s ease;
         }
         .detail-wrapper{
-
+            
         }
         .detail-close{
             width:30px;

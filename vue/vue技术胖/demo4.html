@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dome04</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.3.4/vue.global.js"></script>
+</head>
+<body>
+    <div class="app"></div>
+</body>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return {
+                name: 'jjj',
+                pay:()=>{
+                    alert('给你50块')
+                }
+            }
+        },
+        template: `
+            <h2>我是父组件</h2>
+            <Son :name="name"></Son>
+        `,
+    })
+    app.component('Son',{
+        props:{
+            name:{
+                type:String,
+                validator:function(value){
+                    return value.search("jjj") !=-1
+                },
+                default:'jjj'
+            }
+        },
+        template: `
+            <h2>{{name}}</h2>
+        `
+    })
+    const vm = app.mount('.app')
+</script>
+</html>

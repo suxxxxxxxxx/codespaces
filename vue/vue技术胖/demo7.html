@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dome7</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.3.4/vue.global.js"></script>
+</head>
+<body>
+    <div class="app"></div>
+</body>
+<script>
+    // 改变1: 使用 Vue.createApp 创建应用
+    const app = Vue.createApp({
+        data() {
+            return {
+                counter: 0
+            };
+        },
+        methods:{
+            handleAdd(param){
+                this.counter = param
+            }
+        },
+        template: `
+            <div>
+                <h2>Vue3.0</h2>
+            </div>
+            <my-component :counter="counter" @add="handleAdd"></my-component> 
+        `
+    }); 
+
+    app.component('my-component', {
+        props: ['counter'],
+        emits:{
+            add:(value)=>{
+                return value < 20 ? true : false
+            }
+        },
+        methods:{
+            handleClick(){
+                this.$emit('add',this.counter+3)
+            }
+        },
+        template: `
+            {{ counter }} <button @click="handleClick">+1</button>
+        `
+    });
+
+    //1.子组件调用父组件事件/方法
+    //2.子组件向父组件传递参数
+    //3.传递参数时，如何进行校验
+
+    const vm = app.mount('.app');
+</script>
+</html>

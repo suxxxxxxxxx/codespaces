@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dome01</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.3.4/vue.global.js"></script>
+</head>
+<body>
+    <div class="app"></div>
+</body>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return {
+                name: 123,
+                pay:()=>{
+                    alert('给你50块')
+                }
+            }
+        },
+        template: `
+            <h2>我是父组件</h2>
+            <Son :name="name"></Son>
+            <xiaojiejie :pay="pay"></xiaojiejie>
+        `,
+    })
+    app.component('Son',{
+        props:['name'],
+        template: `
+            <h2>我是子组件{{name}}</h2>
+        `
+    })
+app.component('xiaojiejie',{
+    props:['pay'],
+    methods:{
+        handleClick(){
+            alert('点击了');
+            this.pay() ;
+        }
+    },
+    template: `
+        <h2 @click="this.handleClick">我是小姐姐</h2>
+    `
+})
+    const vm = app.mount('.app')
+</script>
+</html>

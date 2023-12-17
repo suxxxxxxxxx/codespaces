@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dome05</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.3.4/vue.global.js"></script>
+</head>
+<body>
+    <div class="app"></div>
+</body>
+<script>
+    // 改变1: 使用 Vue.createApp 创建应用
+    const app = Vue.createApp({
+        data() {
+            return {
+                counter: 0
+            };
+        },
+        template: `
+            <div>
+                <h2>Vue3.0</h2>
+            </div>
+            <my-component :counter="counter"></my-component> 
+        `
+    }); 
+
+    app.component('my-component', {
+        props: ['counter'],
+        // 改变2: 使用返回对象的函数而不是 this.counter
+        data() {
+            return {
+                newCounter: this.counter
+            };
+        },
+        template: `
+            {{ newCounter }} <button @click="newCounter += 1">+1</button>
+        `
+    });
+
+    // 改变3: 使用 Vue.createApp 返回的 app 对象
+    const vm = app.mount('.app');
+</script>
+</html>

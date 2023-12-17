@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dome05</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.3.4/vue.global.js"></script>
+</head>
+<body>
+    <div class="app"></div>
+</body>
+<script>
+    // 改变1: 使用 Vue.createApp 创建应用
+    const app = Vue.createApp({
+        template: `
+            <div>
+                <h2>Vue3.0</h2>
+            </div>
+            <hello style="color:red";msg="sususu"></hello>
+            <world></world>
+        `
+    }); 
+    app.component('hello',{
+        mounted(){
+
+        },
+        template:`
+                <h2 v-bind:style="$attrs.style">hello</h2>
+                <h2>hello</h2>
+        `
+    })
+    app.component('world',{
+        inheritAttrs:false,
+        template:`
+            <div>
+                <h2>world</h2>
+            </div>
+        `
+    })
+
+    const vm = app.mount('.app');
+    //Non-props其实就是子组件没有接受父组件传递的数据
+    //而子组件完全不变的复制了属性到自己的标签上，就叫做Non-props
+</script>
+</html>

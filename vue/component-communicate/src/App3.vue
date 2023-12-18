@@ -1,6 +1,6 @@
 <template>
     <div>
-      <Head @add="addItemToList"></Head>
+      <Head @add="add"></Head>
       <List :lists="lists"></List>
     </div>
   </template>
@@ -21,7 +21,7 @@
       }
     },
     methods: {
-      addItemToList(message) {
+      add(message) {
         this.lists.push(message);
       }
     }

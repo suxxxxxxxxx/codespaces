@@ -1,26 +1,31 @@
 <template>
-    <div class="head">
+  <div>
+      <div class="head">
       <input type="text" name="" v-model="message">
-      <button >确定</button>
+      <button @click="submit">确定</button>
     </div>
-  </template>
-  
-  <script>
-  import {mapMutations} from 'vuex'
+  </div>
+</template>
+
+<script>
+import { mapMutations } from 'vuex'
   export default {
-    data() {
-      return {
-        message: ''
+      data(){
+      return {     
+        message:''
       }
     },
-    mutations:{//methods
-        submit() {
-            this.listsAdd(message)
-        },
-        ...mapMutations(['listsAdd'])
-    },
-    
+    methods:{
+      submit(){
+        if(!this.message) return 
+        this.listsAdd(this.message)
+        this.message = ''
+      },
+      ...mapMutations(['listsAdd'])
+    }
   }
-  </script>
-  
-  <style lang="css" scoped></style>
+</script>
+
+<style lang="css" scoped>
+
+</style>

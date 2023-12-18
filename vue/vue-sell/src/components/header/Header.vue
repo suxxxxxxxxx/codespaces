@@ -12,7 +12,7 @@
           <div class="description">{{ seller.description }}/{{ seller.deliveryTime}}分钟送达</div>
           <div class="support" v-if="seller.supports">
             <!--  -->
-            <support-icon size="1" :type="seller.supports[0].type" />
+            <support-icon :size="1" :type="seller.supports[0].type" />
             <span class="text">{{ seller.supports[0].description }}</span>
           </div>
         </div>

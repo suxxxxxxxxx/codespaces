@@ -1,22 +1,27 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import { useBanner } from './api/index'
-import type { Banner } from './models/banner'
-let banners = ref<Banner[]>([])//Vue 响应式
+import Banner from './components/Banner.vue'
+import PersonalizedMv from './components/PersonalizedMv.vue'
 
-onMounted(async () => {
-  banners.value = await useBanner()
-  console.log(banners.value);
-  
-})
 </script>
 
 <template>
-  <ul>
-    <li v-for="banner in banners" :key="banner.targetId">
-    <img :src="banner.pic" >
-    </li>
-  </ul>
+  <div>
+    <Banner />
+    <!-- <ul>
+      <li 
+      v-for="banner in banners" 
+      :key="banner.targetId">
+    <img :src="banner.pic" alt=""></li>
+    </ul> -->
+    <PersonalizedMv />
+    <!-- <ul>
+      <li 
+      v-for="mv in personalizedMv" 
+      :key="mv.id">
+    <img :src="mv.picUrl" alt=""></li>
+    </ul> -->
+  </div>
+
 </template>
 
 <style scoped>

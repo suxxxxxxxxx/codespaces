@@ -35,5 +35,11 @@ router.post('/login',async (ctx) =>{
         }
     }
 })
+//定义注册接口
+router.post('/',register,async(ctx) =>{
+    //拿到前端传过来的username，password，nickname
+    //在数据库中校验username是否存在，如果不存在
+    //往数据库中植入一条新的数据
+})
 
 module.exports = router

@@ -1,6 +1,6 @@
 <template>
     <div>
-        Dashboard
+        Dashbord
     </div>
 </template>
 
@@ -8,6 +8,6 @@
 
 </script>
 
-<style scoped>
+<style  scoped>
 
 </style>

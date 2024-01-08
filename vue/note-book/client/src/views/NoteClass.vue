@@ -1,6 +1,6 @@
 <template>
     <div>
-        noteClass
+        NoteClass page
     </div>
 </template>
 

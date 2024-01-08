@@ -1,19 +1,21 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
-import 'amfe-flexible' // 自动设置根字体大小
+import 'amfe-flexible' // 跟字体自动设置
 import './assets/style/reset.css'
+import router from './router'
 
 import { Button, Form, Field, CellGroup } from 'vant';
+
+// 2. 引入组件样式
 import 'vant/lib/index.css';
-
-const app = createApp(App);
-app.use(router);
-
 // 3. 注册你需要的组件
-app.use(Button);
-app.use(Form);
-app.use(Field);
-app.use(CellGroup);
+createApp(App)
+.use(Button)
+.use(Form)
+.use(Field)
+.use(CellGroup)
+.use(router)
+.mount('#app')
+ 
 
-app.mount('#app')
+

@@ -9,7 +9,7 @@
 3.concat
 4.slice
 5.数组解构
-6.arr.toReversed().reverse()
+6.arr.toReversed().reverse()//不完全是浅拷贝
 
 #深拷贝
 -常见的深拷贝方法：

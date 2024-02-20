@@ -25,14 +25,14 @@ const initLRlist = () => {
   let rightHeightSum = 0
   let leftArr: Note[] = []
   let rightArr: Note[] = []
-  nextTick(() => {
+  nextTick(() => {//等待dom渲染完成
     items.value.forEach((item, index) => {
       if (leftHeightSum <= rightHeightSum) {
         leftArr.push(notes.value[index])
         leftHeightSum += item?.clientHeight
       } else {
         rightArr.push(notes.value[index])
-        rightHeightSum += item?.clientHeight
+        rightHeightSum += item?.clientHeight//
       }
     })
     state.leftList = leftArr.reverse()

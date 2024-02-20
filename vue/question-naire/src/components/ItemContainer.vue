@@ -1,6 +1,5 @@
 <template>
   <section>
-
       <!-- html标签，和div一样 -->
       <header class="top_tips">
           <span class="num_tip" v-if="parentComponent === 'home'">

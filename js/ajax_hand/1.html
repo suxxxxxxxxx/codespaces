@@ -24,15 +24,19 @@
                     :new ActiveXObject('Microsoft.XMLHTTP')
                 //打开主动请求数据
                 console.log(xhr.readyState)//0
-                xhr.open('GET',url)
+                xhr.open('GET',url,false)
                 console.log(xhr.readyState)//1 http请求通道打开
                 xhr.onreadystatechange = function(){
                     console.log(xhr.readyState) //完成所有数据传输
                     if(xhr.readyState !==4)return 
+                    // 304Not Modified 性能优化 
+                    // 服务器端资源在多次请求中没有变化(update_time 文件)304 响应头，不传输响应体
+                    // 前端 304 怎么办？前端会去浏然器缓存里面
+                    // 协商缓存
                     if(xhr.status === 200||xhr.status === 304){
                         resolve(xhr.responseText)
                     }else{
-                        reject(new Error('请求失败'))
+                        reject(xhr.responseText)
                     }
                 }
                 xhr.send()
@@ -44,6 +48,14 @@
             console.log('2222')
             console.log(p)//pending Promise
             //await后面是一个promise对象
+            try{
+                const data = await p
+                console.log('3333')
+                console.log(p)//fullfilled
+                console.log(data)
+            }catch(err){
+                console.log(err)
+            }
             const data = await p//卡在这里
             console.log('3333')
         //     const data = await getDataByAjax('https://api.github.com/users/shunwuyu/repos')

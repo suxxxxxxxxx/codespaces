@@ -1,0 +1,12 @@
+{
+  "name": "node_demo",
+  "version": "1.0.0",
+  "description": "-简历有所表现\r -aigc\r 了解 openai 相关接口和 LLM 的应用，在接触 langchain ai 应用框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "csr-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vue/server-renderer": "^3.4.21",
+    "express": "^5.0.0-beta.2",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "vite": "^5.0.0"
+  },
+  "description": "-/ 网络请求     -index.html root 挂载点 script main.js     vue js -对 SEO 十分不友好     爬虫只会爬取 index.html，不能爬 js 并执行     -PC or Mobile     PC 端流量来自百度 SEO 非常重要     Mobile 来自链接分享，App 的内嵌页，SEO 没那么重要     VUE SPA 主流开发？     -PC 站 google/baidu",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
